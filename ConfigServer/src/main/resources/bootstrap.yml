@@ -1,0 +1,19 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: ConfigServer
+  profiles:
+    active: native
+---
+custome:
+  home: /Users/tobbyquinn/IdeaProjects/docker-spring-cloud
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file://${custome.home}/config-repo/{application}/{profile}
+---
+

@@ -1,0 +1,19 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: EurekaServer
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8089/eureka/
+---

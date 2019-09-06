@@ -1,0 +1,10 @@
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${server.port}
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8089/eureka/
+logging:
+  level:
+    ROOT: debug
